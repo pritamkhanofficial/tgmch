@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TGMCH</title>
     <?=view('component/front/head') ?>
 </head>
 
@@ -43,6 +43,24 @@
                 </tbody>
             </table>
         </div>
+
+        <?php if(!empty($departmental_gallery)){ ?>
+        <div class="row my-3">
+            <div class="section-title col-12 text-center">
+                <hr>
+                <h4>Departmental Gallery</h4>
+            </div>
+            <?php foreach($departmental_gallery AS $key=>$row){ ?>
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="gallery-item">
+                    <a href="<?=base_url('get-file/' . $row->file)?>" class="gallery-lightbox">
+                        <img src="<?=base_url('get-file/' . $row->file)?>" alt="" class="img-fluid border shadow-md">
+                    </a>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+        <?php } ?>
 
     </main>
     <?=view('component/front/footer') ?>

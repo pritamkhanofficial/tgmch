@@ -97,6 +97,15 @@ class WebsiteModel extends Model
         return $this->db->table('department')->where(['is_active'=>1,'deleted_at'=>NULL])->get()->getResult();
 
     }
+    public function getCommittee(){
+      
+        return $this->db->table('committee')->where(['is_active'=>1,'deleted_at'=>NULL])->get()->getResult();
+
+    }
+
+    public function getDepartmentalGallery($id){
+        return $this->db->table('departmental_gallery')->where(['department_id'=>$id,'is_active'=>1,'deleted_at'=>NULL])->get()->getResult();
+    }
     public function getStaff($id, $type = NULL){
         $query = $this->db->table('staff');
         $query->select('department.label AS department, designation.label AS designation, committee.label AS committee, staff.*');

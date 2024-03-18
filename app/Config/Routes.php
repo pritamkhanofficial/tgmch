@@ -64,6 +64,10 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'department/(:segment)', 'BackPanelController::department/$1');
         $routes->match(['get', 'post'],'department/(:segment)/(:segment)', 'BackPanelController::department/$1/$2');
 
+        $routes->match(['get', 'post'],'departmental-gallery/', 'BackPanelController::departmentalGallery');
+        $routes->match(['get', 'post'],'departmental-gallery/(:segment)', 'BackPanelController::departmentalGallery/$1');
+        $routes->match(['get', 'post'],'departmental-gallery/(:segment)/(:segment)', 'BackPanelController::departmentalGallery/$1/$2');
+
 
 
         $routes->match(['get', 'post'],'staff/', 'BackPanelController::staff');

@@ -22,6 +22,7 @@ class WebsiteController extends BaseController
         $gallery = $this->websiteModel->getGallery();
         $hospital_head = $this->websiteModel->getHospitalHead();
         $department = $this->websiteModel->getDepartment();
+        $committee = $this->websiteModel->getCommittee();
         return view('website/home',[
             'sliders'=>$sliders,
             'news'=>$news,
@@ -31,6 +32,7 @@ class WebsiteController extends BaseController
             'gallery'=>$gallery,
             'hospital_head'=>$hospital_head,
             'department'=>$department,
+            'committee'=>$committee,
         ]);
     }
     public function department()
@@ -44,9 +46,11 @@ class WebsiteController extends BaseController
     {
         $department = $this->websiteModel->getDepartment($id);
         $staff = $this->websiteModel->getStaff($id,'department');
+        $departmental_gallery = $this->websiteModel->getDepartmentalGallery($id);
         return view('website/department-details',[
             'department'=>$department,
             'staff'=>$staff,
+            'departmental_gallery'=>$departmental_gallery,
         ]);
     }
     public function committeeDetails($id)

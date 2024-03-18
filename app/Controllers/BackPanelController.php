@@ -884,14 +884,44 @@ class BackPanelController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
+    public function departmentalGallery(){
+        $crud = new GroceryCrud();
+        $crud->displayAs('is_active','Status');
+        $crud->displayAs('file','Image');
+        $crud->where("departmental_gallery.deleted_at", NULL);
+        $crud->columns(['department_id','label','file', 'is_active']);
+        $crud->fields(['department_id', 'label','file','is_active','created_by','updated_at','updated_by']);
+        $crud->setRelation('department_id', 'department', 'label');
+        $crud->fieldType('created_by', 'hidden', \getUserData()->id);
+        $crud->fieldType('updated_at', 'hidden', NULL);
+        $crud->fieldType('updated_by', 'hidden', NULL);
+        $this->fileHandle($crud, 'file','image');
+        if ($crud->getState() === 'delete') {
+            
+            $result = $this->websiteModel->softDelete('designation', $crud->getStateInfo()->primary_key);
+            if($result){
+                return $this->response->setJSON([
+                    'success'=>true,
+                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                ]);
+            }
+            
+        }
+        $crud->unsetPrint();
+        $crud->unsetExport();
+        $crud->setTable('departmental_gallery');
+        $crud->setSubject('Departmental Gallery');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
 
     public function committee(){
         $crud = new GroceryCrud();
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['label', 'is_active']);
-        $crud->fields(['label','is_active','created_by','updated_at','updated_by']);
-        
+        $crud->columns(['label','file', 'is_active']);
+        $crud->fields(['label','file','is_active','created_by','updated_at','updated_by']);
+        $this->fileHandle($crud, 'file','document');
         $crud->fieldType('created_by', 'hidden', \getUserData()->id);
         $crud->fieldType('updated_at', 'hidden', NULL);
         $crud->fieldType('updated_by', 'hidden', NULL);

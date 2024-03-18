@@ -318,22 +318,10 @@
                             <hr>
 
                             <ul>
-                                <li><a target="_new" href="./documents/Anti-ragging-committee-new.pdf">Anti Ragging
-                                        Committee</a></li>
-                                <hr>
-                                <li><a target="_new" href="./documents/condemnation-committee-19thMay.pdf">Condemnation
-                                        Committee</a></li>
-                                <hr>
-                                <li><a target="_new" href="./documents/Gender-Harassment-Committee-new.pdf">Gender
-                                        Harrassment Committee</a></li>
-                                <hr>
-                                <li><a target="_new"
-                                        href="./documents/grievance-redressal-committee-19thMay.pdf">Grievance Redressal
-                                        Committee</a></li>
-                                <hr>
-                                <li><a target="_new" href="./documents/Sexual_harassment_of_women sop_new.pdf">
-                                        Committee against Sexual Harrasment of Women at Work Place</a></li>
-                                <hr>
+                            <?php foreach($committee AS $key=>$row){ ?>
+                                <li><a target="_new" href="<?=base_url('get-file/' . $row->file)?>"><?=$row->label?></a></li>
+                                <?=(count($committee) - 1 != $key) ? '<hr>':''?>
+                                <?php } ?>
 
                             </ul>
 
@@ -507,11 +495,11 @@
             <div class="container-fluid">
                 <div class="row g-0">
 
-                    <?php for($i=1;$i<9;$i++){ ?>
+                    <?php foreach($gallery AS $key=>$row){ ?>
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="./images/gallery/<?=$i?>.jpeg" class="galelry-lightbox">
-                                <img src="./images/gallery/<?=$i?>.jpeg" alt="" class="img-fluid">
+                            <a href="<?=base_url('get-file/' . $row->image)?>" class="galelry-lightbox">
+                                <img src="<?=base_url('get-file/' . $row->image)?>" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>

@@ -17,8 +17,8 @@ class BackPanelController extends BaseController
         $crud->displayAs('image','Slider');
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['image', 'is_active']);
-        $crud->fields(['image', 'is_active','created_by','updated_at','updated_by']);
+        $crud->columns(['image','title', 'is_active']);
+        $crud->fields(['image','title', 'is_active','created_by','updated_at','updated_by']);
         $this->fileHandle($crud, 'image','image');
         // $crud->unsetDelete();
         // $crud->unsetAdd();
@@ -54,11 +54,9 @@ class BackPanelController extends BaseController
         $crud->fields(['title','file','description', 'doc_type', 'end_date', 'is_active','created_by','updated_at','updated_by']);
         $crud->setTexteditor(['description']);
         $crud->fieldType('doc_type', 'dropdown', [
-            'NOTICE' => 'Notice',
-            'TENDER' => 'Tender',
-            'NE' => 'News / Events',
-            // 'ARS' => 'Anti Ragging Section',
-            'NEWS' => 'News'
+            'NOTICE' => 'General Notice',
+            'TENDER' => 'Tender / Quotation',
+            'NE' => 'News & Events',
         ]);
         $this->fileHandle($crud, 'file','document');
 
@@ -924,10 +922,10 @@ class BackPanelController extends BaseController
         $crud->displayAs('is_active','Status');
         $crud->where("staff.deleted_at", NULL);
         $crud->columns(['department_id','designation_id','label','type', 'is_active']);
-        $crud->fields(['department_id','designation_id','committee_id','label', 'type','description','is_active','created_by','updated_at','updated_by']);
+        $crud->fields(['department_id','designation_id','label', 'type','description','is_active','created_by','updated_at','updated_by']);
         $crud->setRelation('department_id', 'department', 'label');
         $crud->setRelation('designation_id', 'designation', 'label');
-        $crud->setRelation('committee_id', 'committee', 'label');
+        // $crud->setRelation('committee_id', 'committee', 'label');
         $crud->fieldType('type', 'dropdown', [
             'TS' => 'Teaching staff',
             'NTS' => 'Non-teaching staff'

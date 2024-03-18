@@ -10,45 +10,41 @@
 
 <body>
     <?=view('component/front/header') ?>
-    <!-- start banner section -->
-    <div>
-        <?php
-        if(empty($department->image)){
-        ?>
-        <img src="<?=base_url('front/')?>images/banner/banner.png" width="100%">
-        <?php  }else{ ?>
-            <img src="<?=base_url('get-file/' . $department->image)?>" width="100%">
-        <?php } ?>
-    </div>
-    <!-- ends banner  section ends -->
-    <!-- info / secondary -->
-    <div class="container">
-        <div>
-            <h3 class="text-center mt-4"><?=$department->label?></h3>
-        </div>
-        <div class="col-md-12">
-            <table class="table table-striped table-bordered" style="width:100%">
+    <!-- ======= Hero Section ======= -->
+    <section id="">
+        <img src="<?=base_url('front')?>/img/dept-about.jpg" class="w-100">
+    </section><!-- End Hero -->
+    <!--LIBRARY---LINK---SECTION---END-->
+    <main class="container">
+
+        <div class="row">
+
+            <div class="section-title">
+                <h2>Department details of <?=$department->label?></h2>
+                <h4>Faculty Details</h4>
+            </div>
+
+            <table class="table w-100">
                 <thead>
                     <tr>
-                        <th class="text-center" scope="col">SL NO</th>
-                        <th class="text-center" scope="col">NAME</th>
-                        <th class="text-center" scope="col">DESIGNATION</th>
-
-
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Designation</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($staff as $key=>$row){ ?>
+                    <?php foreach ($staff as $key => $row) { ?>
                     <tr>
-                        <th class="text-center" scope="row"><?=++$key?></th>
-                        <td><?=$row->label?></td>
-                        <td><?=$row->designation?>, Department of <?=$department->label?></td>
+                        <th scope="row"><?= ++$key ?></th>
+                        <td><?=$row->label?> </td>
+                        <td><?=$row->designation?></td>
                     </tr>
                     <?php } ?>
                 </tbody>
             </table>
         </div>
-    </div>
+
+    </main>
     <?=view('component/front/footer') ?>
     <?=view('component/front/script') ?>
 </body>

@@ -21,6 +21,7 @@ class WebsiteController extends BaseController
         $anti_ragging_section = $this->websiteModel->getDocument('ARS');
         $gallery = $this->websiteModel->getGallery();
         $hospital_head = $this->websiteModel->getHospitalHead();
+        $department = $this->websiteModel->getDepartment();
         return view('website/home',[
             'sliders'=>$sliders,
             'news'=>$news,
@@ -29,7 +30,7 @@ class WebsiteController extends BaseController
             'notice'=>$notice,
             'gallery'=>$gallery,
             'hospital_head'=>$hospital_head,
-            'anti_ragging_section'=>$anti_ragging_section,
+            'department'=>$department,
         ]);
     }
     public function department()

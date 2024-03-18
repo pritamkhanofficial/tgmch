@@ -21,7 +21,7 @@
                      </a>
                      <ul class="sub-menu mm-collapse" aria-expanded="false">
                          <li><a href="<?=base_url('back-panel/department')?>" key="t-default">Department</a></li>
-                         <li><a href="<?=base_url('back-panel/designation')?>" key="t-default">Designation</a></li>
+                         <!-- <li><a href="< ?=base_url('back-panel/designation')?>" key="t-default">Designation</a></li> -->
                          <li><a href="<?=base_url('back-panel/committee')?>" key="t-default">Committee</a></li>
                          <li><a href="<?=base_url('back-panel/page')?>" key="t-default">Page</a></li>
                      </ul>

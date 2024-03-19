@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2024 at 10:17 PM
+-- Generation Time: Mar 19, 2024 at 08:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,18 +31,16 @@ CREATE TABLE `about_hospital` (
   `id` int(5) UNSIGNED NOT NULL,
   `affiliated_to` varchar(255) NOT NULL,
   `vice_chancellor` varchar(100) NOT NULL,
+  `proposed_session` varchar(255) DEFAULT NULL,
   `registrar` varchar(100) NOT NULL,
   `year_of_affiliation` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `history_and_heritage` text NOT NULL,
-  `map` varchar(100) NOT NULL,
-  `address` text NOT NULL,
-  `principle_phone` varchar(20) DEFAULT NULL,
-  `msvp_phone` varchar(20) DEFAULT NULL,
-  `msvp_phone_2` varchar(20) DEFAULT NULL,
+  `website_name` varchar(255) DEFAULT NULL,
+  `map` varchar(500) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
   `mail` varchar(100) DEFAULT NULL,
-  `contact_info` text DEFAULT NULL,
-  `hospital_phone` varchar(20) DEFAULT NULL,
   `footer_text` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `created_by` bigint(20) UNSIGNED NOT NULL,
@@ -54,8 +52,8 @@ CREATE TABLE `about_hospital` (
 -- Dumping data for table `about_hospital`
 --
 
-INSERT INTO `about_hospital` (`id`, `affiliated_to`, `vice_chancellor`, `registrar`, `year_of_affiliation`, `description`, `history_and_heritage`, `map`, `address`, `principle_phone`, `msvp_phone`, `msvp_phone_2`, `mail`, `contact_info`, `hospital_phone`, `footer_text`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(1, 'West Bengal University Of Health Sciences', 'Prof. (Dr.) Suhrita Paul', 'Prof.(Dr.) Indrajit Gupta', '22th September 2021', '<div class=\"text-justify px-4\">\r\n	<p>\r\n		The Journey of Jhargram government hospital started in the year of 1956 A.D, as Sub-Divisional Hospital.<br />\r\n		<br />\r\n		In 2012, this hospital got the status of a &quot;District Hospital&quot; as the State Government declared Jhargram sub division as &#39;Jhargram Health District&#39;.<br />\r\n		<br />\r\n		On 11th February 2016, Hon&#39;ble Chief Minister Smt. Mamata Banerjee inaugurated Jhargram Super Specialty hospital. Subsequently existing District Hospital was merged with the Super Specialty Hospital.<br />\r\n		<br />\r\n		Jhargram government medical college was established by collaborative effort of state and central government under Phase-II of Centrally Sponsored Scheme for &lsquo;Establishment of new Medical Colleges attached with existing District/Referral Hospitals&rsquo; with capacity of 100 students in August 2021. The journey of this Medical college started with admission of first batch of MBBS students in 2022.</p>\r\n	<p>\r\n		Jhargram district, an area spreading across almost 3025 sq Km and having a population of about 1.2 million, belongs to the western part of the West Bengal, with Jhargram city as its headquarters with a population of about 62 thousand. Previously, a part of the Paschim Midnapur district, it found its independent entity as the 22nd district of the state on 4th April, 2017. Jhargram is famous for its natural flora and fauna with its marvellous wooden beauty along with an attractive landscape culminating in the hill ranges of Belpahari, Kankrajhor at the north and Subarnarekha to the south. It is also rich in several ancient temples, folk tunes and rhythms that make it a favourite destination for people who love forests and is natural flora and fauna. The cultural and educational heritage of this area of the Western part of West Bengal has been enriched since a long time. The Jhargram palace, Chilkigarh Kanak Durga Temple, Sabitri Devi Mandir, Medicinal Plant Garden, Ketki falls and the tribal museum are few to mentioned among many others. On the other hand, several educational institutions like Raj college, Nursing training centre, polytechnic college, teachers training and BEd college bear the rich educational heritage of this area. Healthcare system of this area has advanced rapidly in last few years.</p>\r\n</div>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	Jhargram, as described in the Bengal District Gazetteers Midnapore, 1911, as a broken and picturesque of lower ranges of the Chota Nagpur hill line with the jungle having the character of a Sal forest. The indigenous people are the major inhabitants of this place from historical time being ruled by the Malla Rajas (the kings) following which Raja Man Singh (1574 A.D) of Amber conquered this area on behalf of the Mughal Emperor Akbar the Great. Jhargram, along with its surrounding area is referred to as Jungal Mahals (O&rsquo; Malley in Bengal Gazzetteers in 1911). In 1798-99 A.D, Jungal Mahal was the heart of the great &ldquo;Chuar Rebellion&rdquo; against British Government. Jhargram has a significant heritage of temples. 500 years old Kanakdurga temple is one of the prominent heritage sites and its surrounding area was declared as biodiversity-rich heritage by the state government. Rameshwar temple of Lord Shiva is situated at Nayagram and is believed to have been built around 16th century. Tapovan of Nayagram has the temple of Lord Rama, Sita, Valmiki, Hanuman and Lav-Kush. According to local belief it was Rishi Valmiki&rsquo;s ashram where Sita had taken refuge after being disowned by Lord Rama and gave birth to her twins Luv and Kush at this place. Rohini of Jhargram, situated at the confluence of Subarnarekha and Dulung river, was the birth place of Sri Rasikananda Murari, a great devotee of Lord Krishna and principal disciple of Shyamananda Pravu (1590 A.D). He later established Sri Govindadeva temple at Gopiballavpur. Jhargram is also a rich place of cultural heritage for its Folk songs and dances.</p>\r\n', '', '<p>\r\n	Jhargram Government Medical College &amp; Hospital, Vidyasagar Pally, Jhargram, Dist. Jhargram, Pin 721507</p>\r\n', '+91 79808 86408', '03221-255145', '+917319494293', 'support@jgmch.ac.in', '<p>Jhargram Government Medical College &amp; Hospital is situated in Jhargram, which is the\nheadquarter of district Jhargram (West Bengal).</p> \n<p><i class=\"bi bi-airplane\"></i> Jhargram is well connected with Kolkata by road (NH6), Netaji Subhas Chandra Bose\nInternational Airport (Kolkata) is the nearest airport (distance-181 kms approx)</p>\n<p><i class=\"bi bi-train-freight-front\"></i> Jhargram Railway Station is connected with Howrah Railway Station (South Eastern\nRailway) via Khargapur Railway Station. Distance from Howrah is 154 kms and\nKhargapore 47 kms by train</p>\n<p><i class=\"bi bi-signpost-2\"></i> Medinipur, headquarter of district Paschim Medinipur is well connected with Jhargram by\nroad (distance approx 41kms) </p>', '03221-299922', 'Copyright © Jhargram Government Medical College and Hospital', '2024-01-21 18:28:19', 1, '2024-03-17 00:58:32', 1);
+INSERT INTO `about_hospital` (`id`, `affiliated_to`, `vice_chancellor`, `proposed_session`, `registrar`, `year_of_affiliation`, `description`, `history_and_heritage`, `website_name`, `map`, `address`, `phone`, `mail`, `footer_text`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(1, 'West Bengal University Of Health Sciences', 'Prof. (Dr.) Suhrita Paul', '2022-23', 'Prof.(Dr.) Indrajit Gupta', '2021', '<p>\r\n	Tamralipto Government Medical College &amp; Hospital started its journey when Govt of West Bengal decided to open this medical college under Centrally Sponsored Scheme (CSS) (Phase II) declared by Govt of India. The college is built in more than 25 acres of land in the heart of the city of Tamluk which is the</p>\r\n', '<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Tamluk is the district headquarter of Purba Medinipur district. As per the 2011 census, the Tamluk municipal area has a population of 65306. The sex ratio is 963 females per 1,000 males. Purba Medinipur has an average literacy rate of 90.18%, which is higher than the national average of 76.26%.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	City of Tamluk has also its glory of past. The name of the college Tamralipto has originated from the ancient history of &lsquo;Tamralipti port&rsquo;, which was believed to be the exit point of the Mauryan trade route for the south and South-east. In 3rd century BC Samrat Ashoka visited this place with Mahendra and Sanghamitra, his son and daughter.</p>\r\n<p>\r\n	Tamralipta was mentioned in early Indian literary works like Kathasaritsagar and Raghubansha, by Greek astronomer-geographer Ptolemy, Roman author and philosopher Pliny, Chinese monk travellers Fa-hien, Hsuan-tsang, Yi Jing.</p>\r\n<p>\r\n	Matangini Hazra, the famous lady revolutionary, participated in Indian freedom movement like Quit India, Civil Disobedience movement under the banner of Indian National Congress and was shot dead by British police in front of Tamluk police station in 1942 at her 72 years of age. She was born in a village called Hogla near Tamluk.</p>\r\n<p>\r\n	Worth seeing places in Tamluk is Bargabhima temple, considered as 51 shakti peth of mother Durga where left ankle of Sati fell and the temple has been declared by Heritage Site by West Bengal Govt. The place was also mentioned in Mahabharata, which Bhim acquired. Remnants of Tamluk Rajbari is also a place of historical interest.</p>\r\n<p>\r\n	Famous sea beaches of West Bengal viz. Digha, Mandarmani and Tajpur are within 100 kms from Tamluk town.</p>\r\n', 'Tamralipto Government Medical College & Hospital', NULL, NULL, '03228-291086 ', 'contact@tgmch.ac.in', '© Copyright T.G.M.C.H.. All Rights Reserved', '2024-01-21 18:28:19', 1, '2024-03-20 00:23:03', 1);
 
 -- --------------------------------------------------------
 
@@ -356,9 +354,9 @@ CREATE TABLE `hospital_head` (
 --
 
 INSERT INTO `hospital_head` (`id`, `title`, `sub_title`, `address`, `description`, `phone`, `email`, `image`, `is_active`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'Principal', 'Prof. (Dr) Sarmila Mallik', '<p>\r\n	Office of The Principal, Jhargram Government Medical College &amp; Hospital, Vidyasagar Pally, Jhargram, Dist. Jhargram, Pin 721507</p>\r\n', '<p>\r\n	Prof. (Dr.) Susmita Bhattacharya is currently serving as the Principal of Jhargram Government Medical College and Hospital since June, 2023 under the West Bengal Medical Education Service (WBMES). She registered with the West Bengal Medical Council in 1990 (Registration No.: 47771 Dated: 31.03.1990) and subsequently joined the West Bengal Health Service (WBHS) on 31.12.1991 and served till 31.05.2000. Thereafter, she joined the WBMES as a Demonstrator on 31.05.2000, was promoted to the post of Assistant Professor on 09.12.2003, Associate Professor on 17.09.2009 and Professor on 01.08.2013. Academically, she was conferred upon an M.B.B.S. by the University of Calcutta (CU) in 1988, an M.D. by the same university in 2003 and a Ph.D. by the West Bengal University of Health Sciences (WBUHS) in 2018. She served as the Head of Department of Microbiology, College of Medicine and Sagore Dutta Hospital from June 2018 to June 2023. Apart from quotidian academic activities, she acted as an Assessor of the Medical Council of India (now the National Medical Commission) for undergraduate and postgraduate level inspections and served as an External Examiner of M.B.B.S., M.D. (Microbiology), DMLT and B.Sc. (Microbiology) degree/diploma courses in the states of Assam, Odisha, Manipur and Tripura. She is a Life Member of different learned societies including the Indian Medical Association and the Indian Association of Medical Microbiologists. She has published a number of research articles and conference papers in prestigious journals and actively collaborates with peers pertaining to research areas of current and perdurable interest.</p>\r\n', '+91 79808 86408', 'principal.jhargramgmch@gmail.com', '65e308a34ed22.jpg', 1, '2024-03-02 16:37:40', 1, '2024-03-19 02:39:28', 1, NULL),
-(2, 'MSVP', 'Prof. (Dr.) Mrinal Kanti Kundu', '<p>\r\n	Office of The MSVP, Jhargram Government Medical College &amp; Hospital, Vidyasagar Pally, Jhargram, Dist. Jhargram, Pin 721507</p>\r\n', NULL, '03221-255145 / +917319494293 ', 'msvp.jgmch@gmail.com', '65e308e4c0b09.jpeg', 1, '2024-03-02 16:39:24', 1, '2024-03-19 02:39:54', 1, NULL),
-(3, 'Accounts Officer', 'Mr. Sibsundar Metia', '<p>\r\n	Office of Dean of Students Affairs, Jhargram Government Medical College and Hospital, Vidyasagar Pally, Jhargram, Dist. Jhargram,&nbsp;Pin&nbsp;721507</p>\r\n', NULL, NULL, 'deanofstudentsaffairs@jgmch.ac.in', '65e3091b58bc6.jpeg', 1, '2024-03-02 16:40:19', 1, '2024-03-19 02:40:36', 1, NULL);
+(1, 'From the Principal\'s Desk', 'Prof. (Dr) Sarmila Mallik', NULL, '<p>\r\n	Season&rsquo;s greetings to all.</p>\r\n<p style=\"text-align: justify;\">\r\n	It is my proud privilege to address you all as the first principal of Tamralipto Government Medical College &amp; Hospital. The college will start functioning with intake of 100 MBBS students from 2022-23 session, awaiting National Medical Commission approval. It is always a challenge to build a new medical college by uplifting a district hospital and develop all the departments to provide quality health service to the people of the district. Moreover, being a peripheral medical college, there will be some constraints which will be faced.. But I hope that with the whole-hearted cooperation from our stakeholders and local community, we will be able to develop this college as a centre of speciality and superspeciality health services in the district in near future.</p>\r\n<p style=\"text-align: justify;\">\r\n	We are also committed to provide a comprehensive and quality education to our MBBS entrants in a student friendly environment. A team of dedicated faculties are ready to impart competency based medical education to our students to achieve the goal of forming competent Indian Medical Graduates.</p>\r\n<p>\r\n	The project is a dream project of our State Government. Our responsibility is to transform it into reality.</p>\r\n', NULL, '', '65f9d91a11ad0.jpg', 1, '2024-03-02 16:37:40', 1, '2024-03-19 23:57:38', 1, NULL),
+(2, 'From the MSVP\'s Desk', 'Prof. (Dr.) Mrinal Kanti Kundu', '<p>\r\n	Office of The MSVP, Jhargram Government Medical College &amp; Hospital, Vidyasagar Pally, Jhargram, Dist. Jhargram, Pin 721507</p>\r\n', '<p>\r\n	&nbsp;</p>\r\n<p style=\"text-align: justify;\">\r\n	Tamralipto Government Medical College &amp; Hospital started its journey in the year 2022. The college is built in more than 25 acres of land in the heart of the city of Tamluk which is the district head quarter of Purba Medinipur.</p>\r\n<p>\r\n	The Medical college started to function with intake of 100 MBBS students in the session of 2022-2023.</p>\r\n<p>\r\n	The college is a 500 bedded hospital utilising the district hospital catering a huge population and the clinical material needs of the MBBS students.</p>\r\n<p>\r\n	We have I.C.U, S.N.C.U, Dialysis unit, Thalassemia day care unit and Cancer care unit in addition to all the pre-clinical, Para-clinical and clinical departments.</p>\r\n<p>\r\n	This medical college has a modern O.T complex with all facilities and a library with huge collection of Books.</p>\r\n<p>\r\n	D N B courses are running in G &amp; O, Opthalmology and Paediatric department.</p>\r\n<p>\r\n	I believe that with the strong ongoing effort from administrators, Faculties, Doctors and all other supporting staffs, Tamralipto Government Medical college &amp; Hospital will achieve its glory in near future.</p>\r\n', NULL, '', '65f9d95449545.jpg', 1, '2024-03-02 16:39:24', 1, '2024-03-19 23:58:36', 1, NULL),
+(3, 'Accounts Officer', 'Mr. Sibsundar Metia', '<p>\r\n	Office of Dean of Students Affairs, Jhargram Government Medical College and Hospital, Vidyasagar Pally, Jhargram, Dist. Jhargram,&nbsp;Pin&nbsp;721507</p>\r\n', NULL, NULL, 'deanofstudentsaffairs@jgmch.ac.in', '65e3091b58bc6.jpeg', 1, '2024-03-02 16:40:19', 1, '2024-03-19 23:58:41', 1, '2024-03-19 23:58:41');
 
 -- --------------------------------------------------------
 
@@ -625,23 +623,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `mobile`, `full_name`, `profile_pic`, `generate_token`, `generate_on`, `is_online`, `is_block`, `is_active`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
 (1, 'admin', 'admin@gmail.com', '$2y$10$/VFCu1vWk9nptpYG3SLZpOBfWbYAW9.3VaGbirjS9xtOhKB9koOHi', 1234567890, 'Admin', '65f8aab321e6f.png', NULL, NULL, 0, 0, 1, '2024-01-13 15:49:48', 1, '2024-03-19 02:27:23', 1, NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `website_setting`
---
-
-CREATE TABLE `website_setting` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `logo` varchar(255) DEFAULT NULL,
-  `Website_name` varchar(255) DEFAULT NULL,
-  `map` varchar(100) DEFAULT NULL,
-  `address` text NOT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `mail` varchar(100) DEFAULT NULL,
-  `footer_text` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -738,12 +719,6 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `uq_users_username` (`username`);
 
 --
--- Indexes for table `website_setting`
---
-ALTER TABLE `website_setting`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -830,12 +805,6 @@ ALTER TABLE `student`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `website_setting`
---
-ALTER TABLE `website_setting`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

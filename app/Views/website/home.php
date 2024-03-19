@@ -123,11 +123,12 @@
             </div>
             <div class="container-fluid">
 
-                <div class="row bg-base-background">
+                <?php foreach($hospital_head AS $key=>$row){ ?>
+
+                <div class="row  <?=($key == 0) ? 'bg-base-background':''?> ">
+                    <?php if($key == 0){ ?>
                     <div class="col-xl-5 col-lg-6 justify-content-center align-items-stretch position-relative">
-
-                        <img src="./assets/img/IMG_20230419_101933.jpg" class="w-100 mt-200 shadow">
-
+                        <img src="<?=base_url('get-file/' . $row->image)?>" class="w-100 mt-200 shadow">
                     </div>
 
                     <div
@@ -152,11 +153,7 @@
                         </p>
                         <p class="text-right font-weight-bold"> - Prof. (Dr) Sarmila Mallik </p>
                     </div>
-                </div>
-
-                <div class="row">
-
-
+                    <?php }else{ ?>
                     <div
                         class="col-lg-7 col-md-6 col-xl-8 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                         <h3>From the MSVP's Desk</h3>
@@ -183,13 +180,17 @@
                         </div>
 
                     </div>
-
                     <div
                         class="col-lg-5 col-md-6 col-xl-4 justify-content-center align-items-stretch position-relative">
-                        <img src="./assets/img/IMG_20230425_161623.jpg" class="w-100 shadow">
+                        <img src="<?=base_url('get-file/' . $row->image)?>" class="w-100 shadow">
                     </div>
-
+                    <?php } ?>
                 </div>
+
+
+
+
+                <?php } ?>
 
             </div>
         </section><!-- End About Section -->
@@ -318,8 +319,9 @@
                             <hr>
 
                             <ul>
-                            <?php foreach($committee AS $key=>$row){ ?>
-                                <li><a target="_new" href="<?=base_url('get-file/' . $row->file)?>"><?=$row->label?></a></li>
+                                <?php foreach($committee AS $key=>$row){ ?>
+                                <li><a target="_new" href="<?=base_url('get-file/' . $row->file)?>"><?=$row->label?></a>
+                                </li>
                                 <?=(count($committee) - 1 != $key) ? '<hr>':''?>
                                 <?php } ?>
 
@@ -351,7 +353,8 @@
                         <ul class="nav nav-tabs flex-column height-400">
                             <?php foreach ($department as $key => $row) {?>
                             <li class="nav-item">
-                                <a class="nav-link <?=$key == 0 ?'active show':''?>" data-bs-toggle="tab" href="#tab-<?=$key?>"><?=$row->label?></a>
+                                <a class="nav-link <?=$key == 0 ?'active show':''?>" data-bs-toggle="tab"
+                                    href="#tab-<?=$key?>"><?=$row->label?></a>
                             </li>
                             <?php } ?>
 
@@ -364,7 +367,8 @@
                                 <div class="row gy-4">
                                     <div class="col-lg-8 details order-2 order-lg-1">
                                         <h3><?=$row->label?></h3>
-                                        <h5>Click on the following button to view the details of <?=$row->label?> Department</h5>
+                                        <h5>Click on the following button to view the details of <?=$row->label?>
+                                            Department</h5>
 
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -372,7 +376,8 @@
                                     </div>
                                 </div>
                                 <div class="text-center mt-3">
-                                    <a href="<?=base_url('department-details/' . $row->id)?>" class="btn btn-sm btn-primary">View
+                                    <a href="<?=base_url('department-details/' . $row->id)?>"
+                                        class="btn btn-sm btn-primary">View
                                         Details....</a>
                                 </div>
                             </div>

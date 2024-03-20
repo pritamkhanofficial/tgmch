@@ -4,53 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TGMCH</title>
     <?=view('component/front/head') ?>
 </head>
 
 <body>
     <?=view('component/front/header') ?>
-    <!-- start banner section -->
-    <div>
+    <!-- ======= Hero Section ======= -->
+    <section id="">
+
         <?php
         if(empty($content->banner)){
         ?>
-        <img src="<?=base_url('front/')?>images/banner/banner.png" width="100%">
+         <img src="<?=base_url('front')?>/img/dept-about.jpg" class="w-100">
         <?php  }else{ ?>
         <img src="<?=base_url('get-file/' . $content->banner)?>" width="100%">
         <?php } ?>
-    </div>
-    <!-- ends banner  section ends -->
-    <!-- info / secondary -->
-    <div class="container">
-        <h3 class="text-center py-5 fw-bolder mob-about-hos"><?=$content->page?></h3>
-        <div class="row border border-darkblue rounded py-4 my-4">
-            <h4 class=" px-4 fw-bolder mob-about-hos1"></h4>
-            <div class="text-justify px-4">
-                <table class="table-bordered w-100 no-datatable" style="text-align:center">
-                    <thead>
-                        <tr>
-                            <th class="py-2 px-3">SL No </th>
-                            <th class="py-2 px-3"> Name </th>
-                            <td class="text-center">Action</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php for($i = 1; $i <= 8; $i++) { ?>
-                        <?php if(!empty($content->{'title_'.$i})) { ?>
-                        <tr>
-                            <th class="py-2 px-3"> <?=$i?></th>
-                            <th class="py-2 px-3"> <?=$content->{'title_'.$i}?></th>
-                            <td class="text-center"><a href="<?=base_url('get-file/' . $content->{'file_'.$i})?>"
-                                    target="_blank">Click here</a></td>
-                        </tr>
-                        <?php } ?>
-                        <?php } ?>
-                    </tbody>
-                </table>
+    </section><!-- End Hero -->
+    <!--LIBRARY---LINK---SECTION---END-->
+    <main class="container">
+
+        <div class="row">
+
+            <div class="section-title">
+                <h2><?=$content->page?></h2>
+                <!-- <h4>Faculty Details</h4> -->
             </div>
+
+            <table class="table w-100 table-bordered">
+                <thead>
+                    <tr>
+                        <th >#</th>
+                        <th >Label</th>
+                        <th >Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 1; $i<=8; $i++) { ?>
+                    <?php if (empty($content->{'title_'.$i})) continue; ?>
+                    <tr>
+                        <th ><?= $i ?></th>
+                        <td><?=$content->{'title_'.$i}?> </td>
+                        <td><a href="<?=base_url('get-file/' . $content->{'file_'.$i})?>"
+                                target="_blank">Click here</a></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
-    </div>
+    </main>
     <?=view('component/front/footer') ?>
     <?=view('component/front/script') ?>
 </body>

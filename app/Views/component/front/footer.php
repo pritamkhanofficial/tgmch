@@ -5,7 +5,7 @@
 
         <div class="row w-100">
             <div class="copyright text-start col-md-6">
-                &copy; Copyright <strong><span>T.G.M.C.H.</span></strong>. All Rights Reserved
+            <?=getHospitalAbout()->footer_text?>
             </div>
             <div class="credits text-end col-md-6">
                 With Gratitude From | <a target="_blank" href="https://sketchmeglobal.com/">Sketch Me Global</a>

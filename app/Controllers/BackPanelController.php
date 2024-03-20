@@ -119,13 +119,14 @@ class BackPanelController extends BaseController
         $webModel = new WebsiteModel();
         $crud = new GroceryCrud();
         $crud->displayAs('history_and_heritage','History and Heritage');
-        $crud->displayAs('description','About');
+        $crud->displayAs('description','About Hospital');
+        $crud->displayAs('about_college','About College');
         $crud->displayAs('year_of_affiliation','Year of Registration');
         $crud->displayAs('is_active','Status');
         // $crud->where("deleted_at", NULL);
         $crud->columns(['website_name','affiliated_to', 'year_of_affiliation','proposed_session']);
-        $crud->fields(['website_name','affiliated_to', 'year_of_affiliation','proposed_session','description', 'history_and_heritage', 'map','address','phone','mail','footer_text','created_by','updated_by']);
-        $crud->setTexteditor(['description', 'history_and_heritage','address']);
+        $crud->fields(['website_name','affiliated_to', 'year_of_affiliation','proposed_session','description','about_college', 'history_and_heritage', 'map','address','phone','mail','footer_text','created_by','updated_by']);
+        $crud->setTexteditor(['description', 'history_and_heritage','address','about_college']);
         // $crud->setFieldUpload(['file', 'is_active','created_by']);
         //proposed_session
         $crud->fieldType('created_by', 'hidden', getUserData()->id);
